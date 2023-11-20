@@ -1,0 +1,747 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--family_2);
+    padding: 60px 0 0 0;
+    margin: 0;
+    background-color: var(--general);
+}
+
+:root {
+    --family_1: Oswald;
+    --family_2: Relaway;
+    --general: rgb(6, 2, 26);
+    --light-blue: rgba(20, 39, 131, 0.521);
+    --light-white: rgba(26, 56, 177, 0.39);
+    --purple: rgb(38, 9, 92);
+}
+
+@font-face {
+    font-family: Oswald;
+    src: url(../../fonts/Oswald-VariableFont_wght.ttf);
+}
+
+@font-face {
+    font-family: Relaway;
+    src: url(../../fonts/Raleway-VariableFont_wght.ttf);
+}
+
+header.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 3;
+
+    nav.main-navbar {
+        height: 60px;
+        width: 100%;
+        display: flex;
+        gap: 80px;
+        padding: 0 50px;
+        border-bottom: 1px solid rgba(255, 255, 255, .07);
+        backdrop-filter: blur(5px);
+        background-color: var(--general);
+
+        @media (max-width: 1255px) {
+            gap: 20px;
+            padding: 0 20px;
+        }
+
+        .logo {
+            width: max-content;
+            height: 100%;
+            display: flex;
+            place-items: center;
+
+            &:after {
+                content: '';
+                width: 40px;
+                height: 40px;
+                background-color: #ffffff;
+                border-radius: 100%;
+            }
+        }
+
+        .desc {
+            width: 100%;
+            height: 100%;
+
+            >ul {
+                display: flex;
+                gap: 20px;
+                height: 100%;
+                padding: 0;
+                margin: 0;
+                align-items: center;
+                list-style-type: none;
+
+                @media (max-width: 1083px) {
+                    gap: 10px;
+                }
+
+                @media (max-width: 1050px) {
+                    display: none;
+                }
+
+                li {
+                    a {
+                        text-decoration: none;
+                        color: #fff;
+                        font-size: 14px;
+                        font-weight: 600;
+                        font-family: var(--family_2);
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+
+                        svg {
+                            width: 14px;
+                            height: 14px;
+
+                            path {
+                                fill: #fff;
+                            }
+                        }
+                    }
+
+                    .dropdown-menu {
+                        padding: 5px 0;
+                        border-radius: 4px;
+                        background-color: var(--general);
+                        border: 1px solid rgb(255, 255, 255,.06);
+
+                        a {
+                            padding: 10px 20px;
+                            width: 100%;
+                            border-radius: 0;
+                            color: #fff;
+
+                            &:hover {
+                                background-color: #e0e0e0;
+                            }
+                        }
+
+                        &.curriculum {
+                            padding: 15px 20px;
+                            width: 600px;
+                            border-radius: 0;
+
+                            .title {
+                                font-size: 16px;
+                                font-weight: 600;
+                                color: #fff;
+                                display: flex;
+                                align-items: center;
+                                gap: 4px;
+
+                                svg {
+                                    width: 16px;
+                                    height: 16px;
+
+                                    path {
+                                        fill: #fff;
+                                    }
+                                }
+                            }
+
+                            .desc {
+                                font-size: 14px;
+                                color: rgba(255, 255, 255, 0.7);
+                                font-weight: 500;
+                            }
+
+                            .cur-list {
+                                font-size: 0;
+
+                                .block {
+                                    display: inline-block;
+                                    width: calc(100% / 2 - 5px);
+                                    padding: 10px 12px;
+                                    border: 1px solid rgba(255, 255, 255, 0.1);
+                                    border-radius: 4px;
+                                    margin-bottom: 10px;
+                                    cursor: pointer;
+
+                                    &:nth-child(even) {
+                                        margin-left: 10px;
+                                    }
+
+                                    &:hover {
+                                        background-color: rgba(255, 255, 255, 0.06);
+                                    }
+
+                                    .d-block {
+                                        display: flex !important;
+                                        gap: 5px;
+
+                                        .icon {
+                                            width: 40px;
+                                            height: 40px;
+                                            border-radius: 4px;
+                                            background-color: rgba(255, 255, 255, 0.04);
+                                            display: flex;
+                                            justify-content: center;
+                                            align-items: center;
+
+                                            svg {
+                                                width: 25px;
+                                                height: 25px;
+
+                                                path {
+                                                    fill: #fff;
+                                                }
+                                            }
+                                        }
+
+                                        .desc {
+                                            width: calc(100% - 40px);
+                                            line-height: 100%;
+
+                                            .name {
+                                                font-size: 16px;
+                                                font-weight: 700;
+                                                margin-bottom: 8px;
+                                                margin-top: 2px;
+                                                color: #fff;
+                                            }
+
+                                            .lang {
+                                                font-size: 13px;
+                                                color: rgba(255, 255, 255, 0.7);
+                                            }
+                                        }
+
+                                        .action {
+                                            height: 40px;
+                                            display: flex;
+                                            align-items: center;
+                                            width: max-content;
+                                            
+                                            svg{
+                                                width: 20px;
+                                                height: 20px;
+
+                                                path{
+                                                    fill: #ffffff83;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.services {
+                            padding: 15px 20px;
+                            width: 450px;
+
+                            .title {
+                                font-size: 16px;
+                                font-weight: 600;
+                                color: #fff;
+                                display: flex;
+                                align-items: center;
+                                gap: 4px;
+
+                                svg {
+                                    width: 16px;
+                                    height: 16px;
+
+                                    path {
+                                        fill: rgba(255, 255, 255, 0.8);
+                                    }
+                                }
+                            }
+
+                            .desc {
+                                font-size: 14px;
+                                color: rgba(255, 255, 255, 0.7);
+                                font-weight: 500;
+                            }
+
+                            .cons {
+                                .item {
+                                    padding: 10px;
+                                    width: 100%;
+                                    display: flex;
+                                    gap: 10px;
+                                    border: 1px solid rgba(255, 255, 255, .06);
+                                    cursor: pointer;
+                                    border-radius: 4px;
+
+                                    &:hover {
+                                        background-color: rgba(255, 255, 255, 0.05);
+                                    }
+
+                                    .icon {
+                                        width: 40px;
+                                        height: 40px;
+                                        border-radius: 4px;
+                                        background-color: rgba(255, 255, 255, 0.05);
+                                        display: flex;
+                                        justify-content: center;
+                                        align-items: center;
+
+                                        svg {
+                                            width: 24px;
+                                            height: 24px;
+
+                                            path {
+                                                fill: #fff;
+                                            }
+                                        }
+                                    }
+
+                                    .desc {
+                                        width: calc(100% - 40px);
+
+                                        .name {
+                                            font-size: 15px;
+                                            color: #ffffff;
+                                            font-weight: 600;
+                                        }
+
+                                        .desc {
+                                            font-size: 14px;
+                                            font-weight: 600;
+                                            color: rgba(255, 255, 255, 0.55);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .actions {
+            display: flex;
+            width: max-content;
+            gap: 20px;
+            align-items: center;
+
+            @media (max-width: 1050px) {
+                gap: 10px;
+            }
+
+            .mobile-icon {
+                height: 100%;
+                width: max-content;
+                display: none;
+                align-items: center;
+
+                @media (max-width: 1050px) {
+                    display: flex;
+                }
+
+                button {
+                    svg {
+                        width: 26px;
+                        height: 26px;
+
+                        path {
+                            fill: #ffffff;
+                        }
+                    }
+                }
+            }
+
+            button {
+                all: initial;
+                font-family: var(--family_2);
+                color: #ffffff;
+                font-size: 14px;
+                width: max-content;
+                display: flex;
+                align-items: center;
+                font-weight: 600;
+                gap: 4px;
+                cursor: pointer;
+
+                @media (max-width: 1050px) {
+                    font-size: 12px;
+                }
+
+                img {
+                    width: 18px;
+                }
+
+                svg {
+                    width: 14px;
+                    height: 14px;
+
+                    path {
+                        fill: #ffffff;
+                    }
+                }
+            }
+
+            .dropdown-menu {
+                padding: 5px 0;
+                border-radius: 0px;
+                background-color: var(--general);
+                border: 1px solid rgba(255, 255, 255, 0.06);
+
+                a {
+                    padding: 10px 20px;
+                    width: 100%;
+                    border-radius: 0;
+
+                    img {
+                        width: 18px;
+                    }
+
+                    &:hover {
+                        background-color: rgba(255, 255, 255, .05);
+                    }
+                }
+            }
+
+            a {
+                font-family: var(--family_2);
+                color: #ffffff;
+                line-height: 100%;
+                padding: 6px 20px;
+                border-radius: 30px;
+                font-size: 14px;
+                width: max-content;
+                align-items: center;
+                font-weight: 600;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                gap: 8px;
+
+                &.hire-button {
+                    background-color: #ffffff;
+                    color: #000000;
+                    font-size: 14px;
+
+                    @media (max-width: 1050px) {
+                        font-size: 12px;
+                    }
+                }
+
+                @media (max-width: 1050px) {
+                    font-size: 12px;
+                    padding: 5px 10px;
+                }
+
+                svg {
+                    width: 20px;
+                    height: 20px;
+
+                    @media (max-width: 1050px) {
+                        width: 16px;
+                        height: 16px;
+                    }
+
+                    path {
+                        fill: #000000;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.mobile-menu {
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background-color: rgb(6, 2, 26);
+    backdrop-filter: blur(5px);
+    padding: 15px 20px;
+    overflow-y: scroll;
+    left: -100%;
+    display: none;
+    transition: .2s;
+    z-index: 2;
+
+    @media (max-width: 1050px) {
+        display: block;
+    }
+
+    .m-link {
+        a {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 600;
+            text-decoration: none;
+        }
+    }
+
+    .accordion {
+        .accordion-item {
+            background: none;
+
+            .collapsed, button {
+                display: flex;
+                align-items: center;
+                gap: 3px;
+                border: none;
+                box-shadow: none;
+                background: none;
+                font-size: 14px;
+                font-weight: 600;
+                padding: 0;
+                width: max-content;
+                gap: 10px;
+                color: #fff;
+
+                * svg, path, *{
+                    color: #fff;
+                    
+                    path{
+                        fill: #fff !important;
+                    }
+                }
+            }
+
+            .accordion-collapse {
+                padding: 0;
+                background: none;
+                font-size: 13px;
+                font-weight: 600;
+
+                button{
+                    color: #fff !important;
+                }
+
+                &.services {
+                    width: 100%;
+
+                    .title {
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #fff;
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+
+                        svg {
+                            width: 16px;
+                            height: 16px;
+
+                            path {
+                                fill: rgba(255, 255, 255, 0.8);
+                            }
+                        }
+                    }
+
+                    .desc {
+                        font-size: 14px;
+                        color: rgba(255, 255, 255, 0.7);
+                        font-weight: 500;
+                    }
+
+                    .cons {
+                        .item {
+                            padding: 10px;
+                            width: 100%;
+                            display: flex;
+                            gap: 10px;
+                            border: 1px solid rgba(255, 255, 255, .06);
+                            cursor: pointer;
+                            border-radius: 4px;
+
+                            &:hover {
+                                background-color: rgba(255, 255, 255, 0.05);
+                            }
+
+                            .icon {
+                                width: 40px;
+                                height: 40px;
+                                border-radius: 4px;
+                                background-color: rgba(255, 255, 255, 0.05);
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                svg {
+                                    width: 24px;
+                                    height: 24px;
+
+                                    path {
+                                        fill: #fff;
+                                    }
+                                }
+                            }
+
+                            .desc {
+                                width: calc(100% - 40px);
+
+                                .name {
+                                    font-size: 15px;
+                                    color: #ffffff;
+                                    font-weight: 600;
+                                }
+
+                                .desc {
+                                    font-size: 14px;
+                                    font-weight: 600;
+                                    color: rgba(255, 255, 255, 0.55);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.meu_curriculo {
+                    width: 100%;
+
+                    .title {
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #fff;
+                        display: flex;
+                        align-items: center;
+                        gap: 4px;
+
+                        svg {
+                            width: 16px;
+                            height: 16px;
+
+                            path {
+                                fill: rgba(255, 255, 255, 0.8);
+                            }
+                        }
+                    }
+
+                    .desc {
+                        font-size: 14px;
+                        color: rgba(255, 255, 255, 0.7);
+                        font-weight: 500;
+                    }
+
+                    .cur-list {
+                        font-size: 0;
+
+                        .block {
+                            display: inline-block;
+                            width: calc(100% / 2 - 5px);
+                            padding: 10px 12px;
+                            border: 1px solid rgba(255, 255, 255, 0.1);
+                            border-radius: 4px;
+                            margin-bottom: 10px;
+                            cursor: pointer;
+
+                            &:nth-child(even) {
+                                margin-left: 10px;
+                            }
+
+                            @media (max-width: 380px){
+                                width: 100%;
+                                
+                                &:nth-child(even) {
+                                    margin-left: 0px;
+                                }
+                            }
+
+                            &:hover {
+                                background-color: rgba(255, 255, 255, 0.06);
+                            }
+
+                            .d-block {
+                                display: flex !important;
+                                gap: 5px;
+
+                                .icon {
+                                    width: 40px;
+                                    height: 40px;
+                                    border-radius: 4px;
+                                    background-color: rgba(255, 255, 255, 0.04);
+                                    display: flex;
+                                    justify-content: center;
+                                    align-items: center;
+
+                                    svg {
+                                        width: 25px;
+                                        height: 25px;
+
+                                        path {
+                                            fill: rgb(255, 255, 255);
+                                        }
+                                    }
+                                }
+
+                                .desc {
+                                    width: calc(100% - 40px);
+                                    line-height: 100%;
+
+                                    .name {
+                                        font-size: 16px;
+                                        font-weight: 700;
+                                        margin-bottom: 8px;
+                                        margin-top: 2px;
+                                    }
+
+                                    .lang {
+                                        font-size: 13px;
+                                        color: rgba(255, 255, 255, 0.7);
+                                    }
+                                }
+
+                                .action {
+                                    height: 40px;
+                                    display: flex;
+                                    align-items: center;
+                                    width: max-content;
+
+                                    svg{
+                                        width: 20px;
+                                        height: 20px;
+
+                                        path{
+                                            fill: #ffffff83;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.hip-efect {
+    transition: .2s;
+
+    &:active {
+        transition: .08s;
+        transform: translateY(5px);
+    }
+}
+
+.bor-efect{
+    transition: .08s;
+    border: 3px solid transparent !important;
+
+    &:active{
+        transition: .1s;
+        transform: scale(.95) !important;
+    }
+    
+    &:focus{
+        border: 3px solid rgb(6, 2, 26) !important;
+        outline: 2px solid #ffffff !important;
+    }
+}
+
+.letaral-limitation{
+    padding: 0 50px;
+
+    @media (max-width: 1050px) {
+        padding: 0 20px;
+    }
+}
